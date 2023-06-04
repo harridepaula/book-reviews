@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import BookCard from './BookCard';
+import './Home.css'; // Import the CSS file for styling
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -24,7 +25,13 @@ const Home = () => {
 
   return (
     <div>
-      <input type="text" value={searchTerm} onChange={handleSearch} placeholder="Search for books..." />
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={handleSearch}
+        placeholder="Search for books..."
+        className="search-bar" // Apply a class for styling
+      />
       <div className="search-results">
         {searchResults.map((book) => (
           <BookCard
